@@ -3,7 +3,11 @@
 {
 	"name": "Ping-Pong",
 
-	"dockerFile": "Dockerfile",
+	"dockerFile": "../Dockerfile",
+	"context": "..",
+	"build": {
+		"target": "devcontainer"
+	},
 
 	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
 	// "mounts": [
@@ -28,7 +32,8 @@
 		"vscode": {
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
-				"mongodb.mongodb-vscode"
+				"mongodb.mongodb-vscode",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}
