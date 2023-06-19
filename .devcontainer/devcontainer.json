@@ -10,23 +10,23 @@
 	},
 
 	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
-	// "mounts": [
-	// 	{
-	// 		"source": "devcontainer-cargo-cache-${devcontainerId}",
-	// 		"target": "/usr/local/cargo",
-	// 		"type": "volume"
-	// 	}
-	// ]
+	"mounts": [
+		{
+			"source": "/var/run/docker.sock",
+			"target": "/var/run/docker.sock",
+			"type": "bind"
+		}
+	],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		"docker-from-docker": {
-			"version": "latest",
-			"moby": true
-		}
-	},
+	// "features": {
+	// 	"ghcr.io/devcontainers/features/docker-outside-of-docker:1.3.0": {
+	// 		"version": "latest",
+	// 		"moby": true
+	// 	}
+	// },
 
-	"runArgs": ["--init"],
+	// "runArgs": ["--init"],
 
 	"customizations": {
 		"vscode": {

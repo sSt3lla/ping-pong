@@ -1,11 +1,14 @@
 version: '3.1'
 
 services:
-  ping:
+  pong:
     build: .
     ports:
       - 8000:8000
-  mongodb:
+    cap_drop:
+      - "ALL"
+    read_only: true
+  mongo:
     image: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
